@@ -167,10 +167,10 @@
 
         jis_default {
             bindings = <
-&kp Q      &kp W         &kp E         &kp R               &kp T                                                                          &kp Y                   &kp U  &kp I      &kp O       &kp P
-&kp A      &kp S         &kp D         &kp F               &kp G                                           &kp BACKSPACE                  &kp H                   &kp J  &kp K      &kp L       &kp MINUS
+&kp Q      &kp W         &kp E         &kp R               &kp T                                                                             &kp Y                      &kp U  &kp I      &kp O       &kp P
+&kp A      &kp S         &kp D         &kp F               &kp G                                              &kp BACKSPACE                  &kp H                      &kp J  &kp K      &kp L       &kp MINUS
 &kp Z      &kp X         &kp C         &kp V               &kp B                      &kp COLON               &lt LY_FUNCTION SEMICOLON      &kp N                      &kp M  &kp COMMA  &kp PERIOD  &kp SLASH
-&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &lt LY_MOUSE LCTRL  &mt LEFT_SHIFT LANGUAGE_2  &lt LY_JIS_NUM SPACE    &lt LY_JIS_SYMBOL_ARROW ENTER  &mt LEFT_SHIFT LANGUAGE_1                                     &kp UNDERSCORE
+&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &lt LY_MOUSE LCTRL  &mt LEFT_SHIFT LANGUAGE_2  &lt LY_JIS_NUM SPACE    &lt LY_JIS_SYMBOL_ARROW ENTER  &mt LEFT_SHIFT LANGUAGE_1                                &kp UNDERSCORE
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -178,10 +178,10 @@
 
         jis_game_default {
             bindings = <
-&kp Q      &kp W         &kp E         &kp R                 &kp T                                                                  &kp Y                   &kp U  &kp I      &kp O       &kp P
-&kp A      &kp S         &kp D         &kp F                 &kp G                                   &kp BACKSPACE                  &kp H                   &kp J  &kp K      &kp L       &kp MINUS
+&kp Q      &kp W         &kp E         &kp R                 &kp T                                                                             &kp Y                      &kp U  &kp I      &kp O       &kp P
+&kp A      &kp S         &kp D         &kp F                 &kp G                                              &kp BACKSPACE                  &kp H                      &kp J  &kp K      &kp L       &kp MINUS
 &kp Z      &kp X         &kp C         &kp V                 &kp B                      &kp COLON               &lt LY_FUNCTION SEMICOLON      &kp N                      &kp M  &kp COMMA  &kp PERIOD  &kp SLASH
-&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &lt LY_JIS_NUM LCTRL  &mt LEFT_SHIFT LANGUAGE_2  &kp SPACE               &lt LY_JIS_SYMBOL_ARROW ENTER  &mt LEFT_SHIFT LANGUAGE_1                                     &kp UNDERSCORE
+&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &lt LY_JIS_NUM LCTRL  &mt LEFT_SHIFT LANGUAGE_2  &kp SPACE               &lt LY_JIS_SYMBOL_ARROW ENTER  &mt LEFT_SHIFT LANGUAGE_1                                &kp UNDERSCORE
             >;
 
             sensor-bindings = <&scroll_up_down>;
