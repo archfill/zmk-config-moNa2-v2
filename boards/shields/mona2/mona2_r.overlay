@@ -23,11 +23,13 @@
         #input-processor-cells = <2>;
         require-prior-idle-ms = <200>;
         excluded-positions = <
-            3 // r
-            4 // t
+            3  // r
+            4  // t
+            12 // d
+            13 // f
             14 // g
-            34 // ctrl
-            38 // shift
+            33 // ctrl
+            37 // shift/lang2
         >;
     };
 };
