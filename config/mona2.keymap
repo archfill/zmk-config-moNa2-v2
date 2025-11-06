@@ -82,6 +82,24 @@
             bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &exit_AML>;
             label = "KP_exit_AML";
         };
+
+        switch_to_jis: switch_to_jis {
+            compatible = "zmk,behavior-macro";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            #binding-cells = <0>;
+            bindings = <&tog_ls_on &to LY_JIS_DEFAULT>;
+            label = "SWITCH_TO_JIS";
+        };
+
+        switch_to_us: switch_to_us {
+            compatible = "zmk,behavior-macro";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            #binding-cells = <0>;
+            bindings = <&tog_ls_off &to LY_US_DEFAULT>;
+            label = "SWITCH_TO_US";
+        };
     };
 
     behaviors {
@@ -245,7 +263,7 @@
         bluetooth {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                         &bt BT_SEL 0             &bt BT_SEL 1       &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans  &trans  &trans  &trans  &trans            &trans       &to LY_JIS_DEFAULT       &to LY_US_DEFAULT  &trans        &trans        &trans
+&trans  &trans  &trans  &trans  &trans            &trans       &switch_to_jis           &switch_to_us      &trans        &trans        &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &bootloader  &to LY_JIS_GAME_DEFAULT  &trans             &trans        &trans        &bt BT_CLR
 &trans  &trans  &trans  &trans  &trans  &trans    &trans       &trans                                                                  &bt BT_CLR_ALL
             >;
