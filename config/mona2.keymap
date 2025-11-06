@@ -5,33 +5,14 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <layout_shift_kp_override.dtsi>
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 #define MOUSE 8
 #define SCROLL 9
 
-// OS設定を日本語キーボードのまま使用するための変換定義
+// 日本語キーボード特殊キー（zmk-layout-shiftが記号を自動変換）
 
-#define JP_DQUOTE       AT                // "
-#define JP_AMPERSAND    CARET             // &
-#define JP_QUOTE        AMPERSAND         // '
-#define JP_EQUAL        UNDER             // =
-#define JP_CARET        EQUAL             // ^
-#define JP_YEN          0x89              // ¥
-#define JP_PLUS         COLON             // +
-#define JP_TILDE        PLUS              // ~
-#define JP_PIPE         LS(0x89)          // |
-#define JP_AT           LEFT_BRACKET      // @
-#define JP_COLON        SINGLE_QUOTE      // :
-#define JP_ASTERISK     DOUBLE_QUOTES     // *
-#define JP_BACKQUOTE    LEFT_BRACE        // `
-#define JP_UNDERSCORE   LS(0x87)          // _
-#define JP_LBRACKET     RIGHT_BRACKET     // [
-#define JP_RBRACKET     BACKSLASH         // ]
-#define JP_LPAREN       ASTERISK          // (
-#define JP_RPAREN       LEFT_PARENTHESIS  // )
-#define JP_LBRACE       RIGHT_BRACE       // {
-#define JP_RBRACE       PIPE              // }
 #define JP_KANA         LANGUAGE_1        // かな
 #define JP_EISU         LANGUAGE_2        // 英数
 #define JP_HANZEN       GRAVE             // 半角/全角
@@ -194,8 +175,8 @@
             bindings = <
 &kp Q      &kp W         &kp E         &kp R               &kp T                                                                          &kp Y                   &kp U  &kp I      &kp O       &kp P
 &kp A      &kp S         &kp D         &kp F               &kp G                                           &kp BACKSPACE                  &kp H                   &kp J  &kp K      &kp L       &kp MINUS
-&kp Z      &kp X         &kp C         &kp V               &kp B                   &kp JP_COLON            &lt LY_FUNCTION SEMICOLON      &kp N                   &kp M  &kp COMMA  &kp PERIOD  &kp SLASH
-&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &lt LY_MOUSE LCTRL  &mt LEFT_SHIFT JP_EISU  &lt LY_JIS_NUM SPACE    &lt LY_JIS_SYMBOL_ARROW ENTER  &mt LEFT_SHIFT JP_KANA                                &kp JP_UNDERSCORE
+&kp Z      &kp X         &kp C         &kp V               &kp B                   &kp COLON            &lt LY_FUNCTION SEMICOLON      &kp N                   &kp M  &kp COMMA  &kp PERIOD  &kp SLASH
+&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &lt LY_MOUSE LCTRL  &mt LEFT_SHIFT JP_EISU  &lt LY_JIS_NUM SPACE    &lt LY_JIS_SYMBOL_ARROW ENTER  &mt LEFT_SHIFT JP_KANA                                &kp UNDERSCORE
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -205,8 +186,8 @@
             bindings = <
 &kp Q      &kp W         &kp E         &kp R                 &kp T                                                                  &kp Y                   &kp U  &kp I      &kp O       &kp P
 &kp A      &kp S         &kp D         &kp F                 &kp G                                   &kp BACKSPACE                  &kp H                   &kp J  &kp K      &kp L       &kp MINUS
-&kp Z      &kp X         &kp C         &kp V                 &kp B                   &kp JP_COLON    &lt LY_FUNCTION SEMICOLON      &kp N                   &kp M  &kp COMMA  &kp PERIOD  &kp SLASH
-&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &lt LY_JIS_NUM LCTRL  &mt LEFT_SHIFT JP_EISU  &kp SPACE       &lt LY_JIS_SYMBOL_ARROW ENTER  &mt LEFT_SHIFT JP_KANA                                &kp JP_UNDERSCORE
+&kp Z      &kp X         &kp C         &kp V                 &kp B                   &kp COLON    &lt LY_FUNCTION SEMICOLON      &kp N                   &kp M  &kp COMMA  &kp PERIOD  &kp SLASH
+&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &lt LY_JIS_NUM LCTRL  &mt LEFT_SHIFT JP_EISU  &kp SPACE       &lt LY_JIS_SYMBOL_ARROW ENTER  &mt LEFT_SHIFT JP_KANA                                &kp UNDERSCORE
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -225,9 +206,9 @@
 
         jis_symbol_arrow {
             bindings = <
-&kp JP_YEN  &kp JP_CARET  &kp EXCLAMATION  &kp JP_AMPERSAND  &kp JP_PIPE                        &kp JP_AT        &kp JP_EQUAL    &kp JP_PLUS    &kp JP_ASTERISK  &kp PERCENT
-&kp HASH    &kp DOLLAR    &kp JP_DQUOTE    &kp JP_QUOTE      &kp JP_TILDE               &trans  &kp LEFT_ARROW   &kp DOWN_ARROW  &kp UP_ARROW   &kp RIGHT_ARROW  &kp JP_BACKQUOTE
-&trans      &trans        &kp JP_LPAREN    &kp JP_LBRACE     &kp JP_LBRACKET  &trans    &trans  &kp JP_RBRACKET  &kp JP_RBRACE   &kp JP_RPAREN  &trans           &trans
+&kp BACKSLASH  &kp CARET  &kp EXCLAMATION  &kp AMPERSAND  &kp PIPE                        &kp AT_SIGN        &kp EQUAL    &kp PLUS    &kp ASTERISK  &kp PERCENT
+&kp HASH    &kp DOLLAR    &kp DOUBLE_QUOTES    &kp SINGLE_QUOTE      &kp TILDE               &trans  &kp LEFT_ARROW   &kp DOWN_ARROW  &kp UP_ARROW   &kp RIGHT_ARROW  &kp GRAVE
+&trans      &trans        &kp LEFT_PARENTHESIS    &kp LEFT_BRACE     &kp LEFT_BRACKET  &trans    &trans  &kp RIGHT_BRACKET  &kp RIGHT_BRACE   &kp RIGHT_PARENTHESIS  &trans           &trans
 &trans      &trans        &trans           &trans            &trans           &trans    &trans  &trans                                                           &trans
             >;
 
