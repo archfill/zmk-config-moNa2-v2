@@ -62,8 +62,6 @@
     tapping-term-ms = <200>;
 };
 
-&mkp_input_listener { input-processors = <&zip_temp_layer MOUSE 10000>; };
-
 / {
     combos {
         compatible = "zmk,combos";
