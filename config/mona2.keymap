@@ -180,7 +180,7 @@
 &trans         &trans      &trans                &trans            &trans            &trans    &trans  &trans                                                                      &trans
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&scroll_right_left>;
         };
 
         jis_default {
@@ -224,7 +224,7 @@
 &trans         &trans      &trans                &trans            &trans            &trans    &trans  &trans                                                                      &trans
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&scroll_right_left>;
         };
 
         function {
@@ -235,7 +235,7 @@
 &trans  &trans  &trans  &trans         &trans  &kp LA(LC(SPACE))    &trans  &trans                          &trans
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         mouse {
