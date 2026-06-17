@@ -2,6 +2,8 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: archfill
+      url-base: https://github.com/archfill
     - name: sayu-hub
       url-base: https://github.com/sayu-hub
     - name: badjeff    # <-- PMW3610
@@ -34,5 +36,8 @@ manifest:
     - name: zmk-layout-shift
       remote: kot149
       revision: v1
+    - name: zmk-smart-mouse-layer
+      remote: archfill
+      revision: main
   self:
     path: config

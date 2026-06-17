@@ -1,6 +1,7 @@
 #include "mona2.dtsi"
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <dt-bindings/zmk/keys.h>
 
 
 &default_transform {
@@ -18,19 +19,14 @@
 };
 
 / {
-    /omit-if-no-ref/ zip_temp_layer: zip_temp_layer {
-        compatible = "zmk,input-processor-temp-layer";
+    /omit-if-no-ref/ smart_mouse_layer: smart_mouse_layer {
+        compatible = "zmk,input-processor-smart-mouse-layer";
         #input-processor-cells = <2>;
-        require-prior-idle-ms = <500>;
-        excluded-positions = <
-            3  // r
-            4  // t
-            12 // d
-            13 // f
-            14 // g
-            33 // ctrl
-            37 // shift/lang2
-        >;
+        movement-threshold = <8>;
+        require-prior-idle-ms = <300>;
+        keep-behaviors = <&mkp &mmv &msc>;
+        keep-keycodes = <LCTRL RCTRL LSHFT RSHFT LALT RALT LGUI RGUI>;
+        transparent-behaviors = <&trans>;
     };
 };
 
@@ -87,6 +83,7 @@
 
     scroller {
         layers = <9>;
+        process-next;
         input-processors =
             // <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,        //X軸とY軸の入れ替え
             <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,       //X軸反転
@@ -95,6 +92,6 @@
             <&zip_scroll_scaler 1 5>;                           //スクロール量を1/4倍
     };
 
-    input-processors = <&zip_temp_layer 8 10000>;
+    input-processors = <&smart_mouse_layer 8 2000>;
 
 };
