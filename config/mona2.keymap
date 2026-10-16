@@ -6,6 +6,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 #include <layout_shift_kp_override.dtsi>
+#include <dt-bindings/zmk/smart_mouse_layer.h>
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 #define MOUSE 8
@@ -243,7 +244,7 @@
 &trans         &trans  &trans    &mkp MB2  &mkp MB3                    &trans  &trans    &trans    &trans    &trans
 &mo LY_SCROLL  &trans  &mkp MB4  &mkp MB5  &mkp MB1            &trans  &trans  &trans    &trans    &trans    &trans
 &trans         &trans  &trans    &trans    &trans    &trans    &trans  &trans  &trans    &trans    &trans    &trans
-&trans         &trans  &trans    &trans    &trans    &trans    &trans  &trans                                &trans
+&trans         &trans  &trans    &trans    &trans    &trans    &trans  &trans                                &sml SML_TOG
             >;
 
             sensor-bindings = <&scroll_up_down>;

@@ -117,3 +117,31 @@
     };
 
 };
+
+// keys.h redefines RC(), so it must come after the matrix transform above
+#include <dt-bindings/zmk/keys.h>
+
+// smart mouse layer (shared so that both halves resolve &sml in the keymap)
+/ {
+    /omit-if-no-ref/ smart_mouse_layer: smart_mouse_layer {
+        compatible = "zmk,input-processor-smart-mouse-layer";
+        #input-processor-cells = <2>;
+        movement-threshold = <8>;
+        require-prior-idle-ms = <300>;
+        keep-behaviors = <&mkp &mmv &msc>;
+        keep-keycodes = <LCTRL RCTRL LSHFT RSHFT LALT RALT LGUI RGUI>;
+        transparent-behaviors = <&trans>;
+        click-window-after-move-ms = <600>;
+        click-window-after-click-ms = <400>;
+        warm-reactivation-ms = <1000>;
+        warm-movement-threshold = <2>;
+        keep-layer-bindings;
+    };
+
+    sml: smart_mouse_layer_behavior {
+        compatible = "zmk,behavior-smart-mouse-layer";
+        #binding-cells = <1>;
+        input-processor = <&smart_mouse_layer>;
+        layer = <8>;
+    };
+};
