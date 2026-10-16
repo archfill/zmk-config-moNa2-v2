@@ -3,3 +3,6 @@ config SHIELD_MONA2_R
 
 config SHIELD_MONA2_L
     def_bool $(shields_list_contains,mona2_l)
+
+config SHIELD_MONA2_DEBUG_NO_TRACKBALL
+    def_bool $(shields_list_contains,mona2_debug_no_trackball)

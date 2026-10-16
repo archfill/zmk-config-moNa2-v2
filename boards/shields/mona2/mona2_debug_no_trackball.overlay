@@ -1,0 +1,9 @@
+// デバッグ用の追加 shield。mona2_r と組み合わせてトラックボールを無効化する。
+// USB ロギング時にトラックボールの DBG ログが溢れてファームウェアが固まるのを避ける。
+&trackball_central {
+    status = "disabled";
+};
+
+&trackball_central_listener {
+    status = "disabled";
+};

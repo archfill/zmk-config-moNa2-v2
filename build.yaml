@@ -25,3 +25,9 @@ include:
     shield: mona2_l rgbled_adapter
   - board: seeeduino_xiao_ble
     shield: settings_reset
+  # デバッグ用: 右手(central)の USB ログ出力。Studio と USB serial が競合するため別 artifact にする
+  # トラックボールの DBG ログで固まるため、トラックボールは無効化している
+  - board: seeeduino_xiao_ble
+    shield: mona2_r rgbled_adapter mona2_debug_no_trackball
+    snippet: zmk-usb-logging
+    artifact-name: mona2_r_usb_logging
